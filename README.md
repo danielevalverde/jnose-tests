@@ -1,3 +1,3 @@
 # jnose-tests
 
-repository with the tests for JNose tool
+repository with tests for JNose tool
