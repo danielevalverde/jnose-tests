@@ -13,7 +13,12 @@ public class CalculateTest {
 	public void setUp() throws Exception {
 		
 	}
-			
+	private final Calculate calc;
+	
+	public CalculateTest() {
+		calc = new Calculate();
+	}
+		
 	@Test
 	public void default_Test() {
 		fail("Not yet implemented");
