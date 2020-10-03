@@ -1,6 +1,6 @@
 package JnoseExampleTests;
 
-public class calculate {
+public class Calculate {
 	
 	public String turnOn() {
 		return "Turn On";

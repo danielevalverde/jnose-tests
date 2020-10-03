@@ -7,17 +7,17 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class calculateTest {
+public class CalculateTest {
 	
 	@Before
 	public void setUp() throws Exception {
 		
 	}
 	
-	private final calculate calc;
+	private final Calculate calc;
 	
-	public calculateTest() {
-		calc = new calculate();
+	public CalculateTest() {
+		calc = new Calculate();
 	}
 		
 	@Test
@@ -28,7 +28,7 @@ public class calculateTest {
 	@Test
 	public void default_test_2() throws InterruptedException {
 		/* following the example on https://testsmells.github.io/pages/testsmellexamples.html#DefaultTest*/
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		int actual = calcule.add(2, 3);
 		int expected = 2;
 		assertEquals(expected,actual);
@@ -36,7 +36,7 @@ public class calculateTest {
 	
 	public void default_test_3() throws Exception {
 		/* following the example on https://testsmells.github.io/pages/testsmellexamples.html#DefaultTest*/
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		int actual = calcule.add(2, 3);
 		int expected = 2;
 		assertEquals(4, 2 + 2);
@@ -44,7 +44,7 @@ public class calculateTest {
 
 	@Test
 	public void unknown_test() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		int actual = calcule.add(2, 3);		
 	}
 	
@@ -153,7 +153,7 @@ public class calculateTest {
 	@Test
 	public void expection_three() {
 		try {
-			calculate calcule = new calculate();
+			Calculate calcule = new Calculate();
 			caculate("string1", "string2");
 	     }
 		catch(Error e) {
@@ -163,33 +163,33 @@ public class calculateTest {
 	
 	@Test
 	public void should_not_be_eager_test() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		assertEquals(calcule.turnOn(),"");
 		assertThat(calcule.turnOn(), is("dada"));
 	}
 	
 	@Test
 	public void should_be_eager_test() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		assertThat(calcule.turnOn(), is(""));
 		assertThat(calcule.turnOn(), is(""));
 	}
 	
 	@Test
 	public void should_be_eager_test_two() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		assertEquals(calcule.turnOn(),"");
 		assertEquals(calcule.turnOff(),"");
 	}
 	
 	public void should_be_lazy_test() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		assertEquals(calcule.add(3, 5),calcule.add(3, 5));
 		assertEquals(calcule.add(2, 5),calcule.add(2, 5));
 	}
 	
 	public void should_be_lazy_test_two() {
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		int count_one = calcule.add(3, 5)+ calcule.add(3, 5);
 		int count_two = calcule.add(3, 5)+ calcule.add(3, 5);
 		assertEquals(count_one, count_two);
@@ -198,7 +198,7 @@ public class calculateTest {
 	@Test
 	public void should_be_assertion_roulette() {
 		// and duplicate assert
-		calculate calcule = new calculate();
+		Calculate calcule = new Calculate();
 		assertEquals(calcule.turnOn(),"");
 		assertEquals(calcule.turnOff(),"");
 		assertEquals(calcule.turnOff(),"");
