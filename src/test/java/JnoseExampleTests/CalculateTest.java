@@ -33,6 +33,7 @@ public class CalculateTest {
 		assertEquals(expected,actual);
 	}
 	
+	@Test
 	public void default_test_3() throws Exception {
 		/* following the example on https://testsmells.github.io/pages/testsmellexamples.html#DefaultTest*/
 		Calculate calcule = new Calculate();
@@ -124,8 +125,13 @@ public class CalculateTest {
 	public void ignored_test() {
 		
 	}
-
+	@Ignore @Test
 	public void ignored_test_two() {
+		System.out.println("Runnig a test without @Test");
+	}
+	
+	@Test @Ignore 
+ 	public void ignored_test_three() {
 		System.out.println("Runnig a test without @Test");
 	}
 	
@@ -153,7 +159,7 @@ public class CalculateTest {
 	public void expection_three() {
 		try {
 			Calculate calcule = new Calculate();
-			caculate("string1", "string2");
+			calcule("string1", "string2");
 	     }
 		catch(Error e) {
 			System.out.println("You can't pass a string for this method");
@@ -181,12 +187,14 @@ public class CalculateTest {
 		assertEquals(calcule.turnOff(),"");
 	}
 	
+	@Test
 	public void should_be_lazy_test() {
 		Calculate calcule = new Calculate();
 		assertEquals(calcule.add(3, 5),calcule.add(3, 5));
 		assertEquals(calcule.add(2, 5),calcule.add(2, 5));
 	}
 	
+	@Test
 	public void should_be_lazy_test_two() {
 		Calculate calcule = new Calculate();
 		int count_one = calcule.add(3, 5)+ calcule.add(3, 5);
@@ -228,11 +236,12 @@ public class CalculateTest {
 		assertEquals(calc.add(2, 3),5);
 	}
 	
+	@Test
 	public void should_be_mistery_number_two() {
 		int value = 5;
 		assertEquals(calc.add(2, 3),value);
 	}
-	
+
 	private Matcher is(String string) {
 		// TODO Auto-generated method stub
 		return null;
