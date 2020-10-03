@@ -16,9 +16,6 @@ public class CalculateTest {
 	
 	private final Calculate calc;
 	
-	public CalculateTest() {
-		calc = new Calculate();
-	}
 		
 	@Test
 	public void default_Test() {
@@ -233,7 +230,6 @@ public class CalculateTest {
 		int value = 5;
 		assertEquals(calc.add(2, 3),value);
 	}
-	
 	
 	private Matcher is(String string) {
 		// TODO Auto-generated method stub
