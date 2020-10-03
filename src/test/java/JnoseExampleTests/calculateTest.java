@@ -2,14 +2,34 @@ package JnoseExampleTests;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 public class calculateTest {
+	
 	@Before
 	public void setUp() throws Exception {
+		int calc2 = new calculate().add(4, 6);
+		int calc3 = new calculate().add(4, 6);
+		int calc4 = new calculate().add(4, 6);
+		int calc5 = new calculate().add(4, 6);
+		int calc6 = new calculate().add(4, 6);
+		
 	}
+	
+	private final calculate calc;
+	
+	public calculateTest() {
+		calc = new calculate();
+	}
+	
+	//@Test
+	//public void should_be_fixture_test() {
+		//assertEquals(calc2,calc3);
+	//	assertEquals(calc2,calc4);
+	//}
 	
 	@Test
 	public void default_Test() {
@@ -150,6 +170,85 @@ public class calculateTest {
 		catch(Error e) {
 			System.out.println("You can't pass a string for this method");
 		}
+	}
+	
+	@Test
+	public void should_not_be_eager_test() {
+		calculate calcule = new calculate();
+		assertEquals(calcule.turnOn(),"");
+		assertThat(calcule.turnOn(), is("dada"));
+	}
+	
+	@Test
+	public void should_be_eager_test() {
+		calculate calcule = new calculate();
+		assertThat(calcule.turnOn(), is(""));
+		assertThat(calcule.turnOn(), is(""));
+	}
+	
+	@Test
+	public void should_be_eager_test_two() {
+		calculate calcule = new calculate();
+		assertEquals(calcule.turnOn(),"");
+		assertEquals(calcule.turnOff(),"");
+	}
+	
+	public void should_be_lazy_test() {
+		calculate calcule = new calculate();
+		assertEquals(calcule.add(3, 5),calcule.add(3, 5));
+		assertEquals(calcule.add(2, 5),calcule.add(2, 5));
+	}
+	
+	public void should_be_lazy_test_two() {
+		calculate calcule = new calculate();
+		int count_one = calcule.add(3, 5)+ calcule.add(3, 5);
+		int count_two = calcule.add(3, 5)+ calcule.add(3, 5);
+		assertEquals(count_one, count_two);
+	}
+	
+	@Test
+	public void should_be_assertion_roulette() {
+		// and duplicate assert
+		calculate calcule = new calculate();
+		assertEquals(calcule.turnOn(),"");
+		assertEquals(calcule.turnOff(),"");
+		assertEquals(calcule.turnOff(),"");
+	}
+	
+	@Test
+	public void should_be_duplicate_assert() {
+		assertEquals("","");
+		assertEquals("","");
+		assertEquals("","");
+		assertEquals("","");
+		assertEquals("","");
+	}
+	
+	@Test
+	public void should_be_construct_initialization() {
+		assertEquals(calc.turnOn(),"");
+	}
+	
+	@Test
+	public void should_be_construct_initialization_two() {
+		int value = calc.add(2, 3);
+		assertEquals(value,2);
+	}
+	
+	@Test
+	public void should_be_mistery_number() {
+		assertEquals(calc.add(2, 3),5);
+	}
+	
+	public void should_be_mistery_number_two() {
+		int value = 5;
+		assertEquals(calc.add(2, 3),value);
+	}
+	
+	
+	private Matcher is(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
