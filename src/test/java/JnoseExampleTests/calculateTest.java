@@ -11,11 +11,6 @@ public class calculateTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		int calc2 = new calculate().add(4, 6);
-		int calc3 = new calculate().add(4, 6);
-		int calc4 = new calculate().add(4, 6);
-		int calc5 = new calculate().add(4, 6);
-		int calc6 = new calculate().add(4, 6);
 		
 	}
 	
@@ -24,13 +19,7 @@ public class calculateTest {
 	public calculateTest() {
 		calc = new calculate();
 	}
-	
-	//@Test
-	//public void should_be_fixture_test() {
-		//assertEquals(calc2,calc3);
-	//	assertEquals(calc2,calc4);
-	//}
-	
+		
 	@Test
 	public void default_Test() {
 		fail("Not yet implemented");
