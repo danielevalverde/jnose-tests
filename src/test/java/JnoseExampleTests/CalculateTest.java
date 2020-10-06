@@ -154,18 +154,7 @@ public class CalculateTest {
 			System.out.println("catch");
 		}
 	}
-	
-	@Test
-	public void expection_three() {
-		try {
-			Calculate calcule = new Calculate();
-			calcule("string1", "string2");
-	     }
-		catch(Error e) {
-			System.out.println("You can't pass a string for this method");
-		}
-	}
-	
+		
 	@Test
 	public void should_not_be_eager_test() {
 		Calculate calcule = new Calculate();
