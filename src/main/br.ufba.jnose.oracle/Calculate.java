@@ -1,5 +1,3 @@
-package JnoseExampleTests;
-
 public class Calculate {
 	
 	public String turnOn() {

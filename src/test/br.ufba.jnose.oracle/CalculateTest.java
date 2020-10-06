@@ -1,5 +1,3 @@
-package JnoseExampleTests;
-
 import static org.junit.Assert.*;
 
 import org.hamcrest.Matcher;
@@ -154,7 +152,7 @@ public class CalculateTest {
 			System.out.println("catch");
 		}
 	}
-		
+
 	@Test
 	public void should_not_be_eager_test() {
 		Calculate calcule = new Calculate();
