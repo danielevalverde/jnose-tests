@@ -1,3 +1,5 @@
+package br.ufba.jnose.oracle;
+
 import static org.junit.Assert.*;
 
 import org.hamcrest.Matcher;

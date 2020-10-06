@@ -1,3 +1,5 @@
+package br.ufba.jnose.oracle;
+
 public class Calculate {
 	
 	public String turnOn() {
