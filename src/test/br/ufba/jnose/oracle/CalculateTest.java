@@ -27,7 +27,7 @@ public class CalculateTest {
 		
 	@Test
 	public void should_be_default_Test() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ public class CalculateTest {
 		/* following the example on https://testsmells.github.io/pages/testsmellexamples.html#DefaultTest*/
 		Calculate calcule = new Calculate("on");
 		int actual = calcule.add(2, 3);
-		int expected = 2;
+		int expected = 5;
 		assertEquals(expected,actual);
 	}
 	
@@ -173,15 +173,15 @@ public class CalculateTest {
 	@Test
 	public void should_be_eager_test() {
 		Calculate calcule = new Calculate("off");
-		assertThat(calcule.turnOn(), is(""));
-		assertThat(calcule.turnOn(), is(""));
+		assertThat(calcule.turnOn(), is("Turn On"));
+		assertThat(calcule.turnOn(), is("Turn On"));
 	}
 	
 	@Test
 	public void should_not_be_eager_test_two() {
 		Calculate calcule = new Calculate("on");
-		assertEquals(calcule.turnOn(),"");
-		assertEquals(calcule.turnOff(),"");
+		assertEquals(calcule.turnOn(),"Turn On");
+		assertEquals(calcule.turnOff(),"Turn Off");
 	}
 	
 	@Test
@@ -203,9 +203,9 @@ public class CalculateTest {
 	public void should_be_assertion_roulette() {
 		// and duplicate assert
 		Calculate calcule = new Calculate("on");
-		assertEquals(calcule.turnOn(),"");
-		assertEquals(calcule.turnOff(),"");
-		assertEquals(calcule.turnOff(),"");
+		assertEquals(calcule.turnOn(),"Turn On");
+		assertEquals(calcule.turnOff(),"Turn Off");
+		assertEquals(calcule.turnOff(),"Turn Off");
 	}
 	
 	@Test
@@ -219,7 +219,7 @@ public class CalculateTest {
 	
 	@Test
 	public void should_be_construct_initialization() {
-		assertEquals(calc.turnOn(),"");
+		assertEquals(calc.turnOn(),"Turn On");
 	}
 	
 	@Test
@@ -275,7 +275,7 @@ public class CalculateTest {
 	@Test
 	public void should_be_sensitive_equality() {
 		String str = "my string"; 
-		assertEquals(str.toString(), "4");
+		assertEquals(str.toString(), "my string");
 	}
 
 }
