@@ -42,16 +42,13 @@ public class CalculateTest {
 	@Test
 	public void should_be_default_test_3() throws Exception {
 		/* following the example on https://testsmells.github.io/pages/testsmellexamples.html#DefaultTest*/
-		Calculate calcule = new Calculate("on");
-		int actual = calcule.add(2, 3);
-		int expected = 2;
 		assertEquals(4, 2 + 2);
 	}
 
 	@Test
 	public void should_be_unknown_test() {
 		Calculate calcule = new Calculate("on");
-		int actual = calcule.add(2, 3);		
+		calcule.add(2, 3);		
 	}
 	
 	@Test
@@ -166,8 +163,8 @@ public class CalculateTest {
 	@Test
 	public void should_not_be_eager_test() {
 		Calculate calcule = new Calculate("on");
-		assertEquals(calcule.turnOn(),"");
-		assertThat(calcule.turnOn(), is(""));
+		assertEquals(calcule.turnOn(),"Turn On");
+		assertThat(calcule.turnOn(), is("Turn On"));
 	}
 	
 	@Test
@@ -233,7 +230,7 @@ public class CalculateTest {
 		assertEquals(calc.add(2, 3),value);
 	}
 
-	private Matcher is(String string) {
+	private Matcher<String> is(String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
