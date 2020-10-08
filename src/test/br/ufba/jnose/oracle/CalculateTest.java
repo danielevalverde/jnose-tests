@@ -140,15 +140,15 @@ public class CalculateTest {
 		System.out.println("Runnig a test without @Test");
 	}
 	
-	@Test
-	public void should_be_expection_one() {
-		try {
-			throw new Error("oops");
-	     }
-		finally {
-			System.out.println("finally");
-		}
-	}
+//	@Test
+//	public void should_be_expection_one() {
+//		try {
+//			throw new Error("oops");
+//	     }
+//		finally {
+//			System.out.println("finally");
+//		}
+//	}
 	
 	@Test
 	public void expection_two() {
@@ -160,19 +160,19 @@ public class CalculateTest {
 		}
 	}
 
-	@Test
-	public void should_not_be_eager_test() {
-		Calculate calcule = new Calculate("on");
-		assertEquals(calcule.turnOn(),"Turn On");
-		assertThat(calcule.turnOn(), is("Turn On"));
-	}
+//	@Test
+//	public void should_not_be_eager_test() {
+//		Calculate calcule = new Calculate("on");
+//		assertEquals(calcule.turnOn(),"Turn On");
+//		assertThat(calcule.turnOn(), is("Turn On"));
+//	}
 	
 	@Test
-	public void should_be_eager_test() {
-		Calculate calcule = new Calculate("off");
-		assertThat(calcule.turnOn(), is("Turn On"));
-		assertThat(calcule.turnOn(), is("Turn On"));
-	}
+//	public void should_be_eager_test() {
+//		Calculate calcule = new Calculate("off");
+//		assertThat(calcule.turnOn(), is("Turn On"));
+//		assertThat(calcule.turnOn(), is("Turn On"));
+//	}
 	
 	@Test
 	public void should_not_be_eager_test_two() {
