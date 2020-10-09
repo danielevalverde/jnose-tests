@@ -178,7 +178,7 @@ public class CalculateTest {
 	public void should_not_be_eager_test_two() {
 		Calculate calcule = new Calculate("on");
 		assertEquals(calcule.turnOn(),"Turn On");
-		assertEquals(calcule.turnOff(),"Turn Off");
+		assertEquals(calcule.turnOff(),"Turn Off!!");
 	}
 	
 	@Test
