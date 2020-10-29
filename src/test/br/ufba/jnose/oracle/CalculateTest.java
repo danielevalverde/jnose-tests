@@ -267,6 +267,8 @@ public class CalculateTest {
 	@Test
 	public void should_be_redundant_assertion_two() {
 	    assertEquals(false, false);
+	    assertEquals(false, false);
+	    assertEquals(false, false);
 	}
 	
 	@Test
