@@ -1,5 +1,4 @@
 package br.ufba.jnose.oracle;
-
 import br.ufba.jnose.oracle.Calculate;  
 import static org.junit.Assert.*;
 
@@ -12,12 +11,10 @@ import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-
 public class CalculateTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		String state = "on";
 		number1 = 1;
 		number2 = 2;
 	}
