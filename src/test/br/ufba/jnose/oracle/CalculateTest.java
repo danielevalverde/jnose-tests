@@ -18,8 +18,13 @@ public class CalculateTest {
 	@Before
 	public void setUp() throws Exception {
 		String state = "on";
+		number1 = 1;
+		number2 = 2;
 	}
+	
 	private Calculate calc;
+	int number1;
+	int number2;
 	
 	public CalculateTest() {
 		calc = new Calculate("off");
@@ -281,6 +286,16 @@ public class CalculateTest {
 	@Test
 	public void should_be_sleep_test() throws InterruptedException {
 		Thread.sleep(500);
+	}
+	
+	@Test
+	public void should_not_be_general_fixture(){
+		assertEquals(number1, number2);  // uses both fields instantiated within the setUp method
+	}
+
+	@Test
+	public void should_be_general_fixture(){
+	    assertEquals("explanation", number1, 2); // uses only the numero1 field
 	}
 
 }
