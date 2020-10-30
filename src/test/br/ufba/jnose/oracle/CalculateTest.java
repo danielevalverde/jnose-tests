@@ -215,17 +215,12 @@ public class CalculateTest {
 	}
 	
 	@Test
-	public void should_be_construct_initialization() {
-		assertEquals(calc.turnOn(),"Turn On");
-	}
-	
-	@Test
-	public void should_be_mistery_number() {
+	public void should_be_magic_number() {
 		assertEquals(calc.add(2, 3),5);
 	}
 	
 	@Test
-	public void should_be_mistery_number_two() {
+	public void should_be_magic_number_two() {
 		int value = 5;
 		assertEquals(calc.add(2, 3),value);
 	}
@@ -257,7 +252,6 @@ public class CalculateTest {
 	    	fw.write("my text");
 	    }
 	}
-
 	
 	@Test
 	public void should_be_redundant_assertion() {
@@ -275,6 +269,18 @@ public class CalculateTest {
 	public void should_be_sensitive_equality() {
 		String str = "my string"; 
 		assertEquals(str.toString(), "my string");
+	}
+	
+	@Test
+	public void should_be_sensitive_equality_two() {
+		String str = "my string"; 
+		str.toString();
+		assertEquals(str.toString(), "my string");
+	}
+	
+	@Test
+	public void should_be_sleep_test() throws InterruptedException {
+		Thread.sleep(500);
 	}
 
 }
