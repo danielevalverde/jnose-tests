@@ -170,19 +170,25 @@ public class CalculateTest {
 	}
 	
 	@Test
-	public void should_be_eager_test() {
+	public void should_not_be_eager_test_two() {
 		Calculate calcule = new Calculate("off");
 		assertThat(calcule.turnOn(), is("Turn On"));
 		assertThat(calcule.turnOn(), is("Turn On"));
 	}
 	
 	@Test
-	public void should_not_be_eager_test_two() {
+	public void should_be_eager_test() {
 		Calculate calcule = new Calculate("on");
 		assertEquals(calcule.turnOn(),"Turn On");
 		assertEquals(calcule.turnOff(),"Turn Off!!");
 	}
 	
+	@Test
+	public void should_be_eager_test_two() {
+		Calculate calcule = new Calculate("on");
+		assertEquals(calcule.turnOn(),"Turn On");
+		assertThat(calcule.turnOff(),is("Turn Off!!"));
+	}
 	@Test
 	public void should_be_lazy_test() {
 		Calculate calcule = new Calculate("on");
@@ -292,7 +298,7 @@ public class CalculateTest {
 
 	@Test
 	public void should_be_general_fixture(){
-	    assertEquals("explanation", number1, 2); // uses only the numero1 field
+	    assertEquals("explanation", number1, 2); // uses only the number1 field
 	}
 
 }
