@@ -283,7 +283,7 @@ public class CalculateTest {
 	public void should_be_sensitive_equality_two() {
 		String str = "my string"; 
 		str.toString();
-		assertEquals(str.toString(), "my string");
+		assertEquals(str, "my string");
 	}
 	
 	@Test
