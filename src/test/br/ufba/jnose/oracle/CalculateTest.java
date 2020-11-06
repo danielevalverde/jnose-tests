@@ -22,6 +22,7 @@ public class CalculateTest {
 	private Calculate calc;
 	int number1;
 	int number2;
+	public int out_setup = 0;
 	
 	public CalculateTest() {
 		calc = new Calculate("off");
@@ -232,6 +233,28 @@ public class CalculateTest {
 		int value = 5;
 		assertEquals(calc.add(2, 3),value);
 	}
+	
+	@Test
+	public void should_be_magic_number_three() {
+		int value1 = 5;
+		int value2 = 5;
+		assertEquals(calc.add(value1, value2),10);
+	}
+	
+	@Test
+	public void should_be_magic_number_four() {
+		int value1 = 5;
+		int value2 = 5;
+		assertTrue(calc.add(value1, value2)==10);
+	}
+	
+	@Test
+	public void should_not_be_magic_number() {
+		int value1 = 5;
+		int value2 = 5;
+		int result = 10;
+		assertEquals(calc.add(value1, value2),result);
+	}
 
 	private Matcher<String> is(String string) {
 		// TODO Auto-generated method stub
@@ -275,15 +298,12 @@ public class CalculateTest {
 	
 	@Test
 	public void should_be_sensitive_equality() {
-		String str = "my string"; 
-		assertEquals(str.toString(), "my string");
+		assertEquals(calc.state.toString(), "my string");
 	}
 	
 	@Test
 	public void should_be_sensitive_equality_two() {
-		String str = "my string"; 
-		str.toString();
-		assertEquals(str, "my string");
+		assertEquals(calc.toString(), "my string");
 	}
 	
 	@Test
@@ -299,6 +319,18 @@ public class CalculateTest {
 	@Test
 	public void should_be_general_fixture(){
 	    assertEquals("explanation", number1, 2); // uses only the number1 field
+	}
+	
+	// Dependent test is a test smell that depends on the result of another test
+	@Test
+	public void should_be_dependent_test_step_one() {
+		out_setup = 5;
+	    assertEquals(out_setup, 5);
+	}
+	
+	@Test
+	public void should_be_dependent_test_two_step_two() {
+	    assertEquals(out_setup, 5); // variable set in the previous test
 	}
 
 }
